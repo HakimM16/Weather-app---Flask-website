@@ -7,21 +7,25 @@
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>Weather Dashboard</h1>
-    <form action="/weather" method="POST">
-        <input type="text" name="city" placeholder="Enter city name..." required>
-        <button type="submit">Get Weather</button>
-    </form>
+    <nav class="nav-bar">
+        <h1>Weather Dashboard</h1>
+    </nav>
+    <div class="container">
+        <form action="/weather" method="POST">
+            <input type="text" name="city" placeholder="Enter city name..." required>
+            <button type="submit">Get Weather</button>
+        </form>
 
-    {% if weather %}
-        <div class="weather">
-            <h2>Weather in {{ weather.city }}</h2>
-            <p>Temperature: {{ weather.temperature }}°C</p>
-            <p>Description: {{ weather.description }}</p>
-            <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather icon">
-        </div>
-    {% elif error %}
-        <p class="error">{{ error }}</p>
-    {% endif %}
+        {% if weather %}
+            <div class="weather">
+                <h2>Weather in {{ weather.city }}</h2>
+                <p>Temperature: {{ weather.temperature }}°C</p>
+                <p>Description: {{ weather.description }}</p>
+                <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather icon">
+            </div>
+        {% elif error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
 </body> 
 </html>
