@@ -1,0 +1,5 @@
+You can expand this project by:
+
+- Adding a dropdown for units (Celsius, Fahrenheit).
+- Displaying a 5-day forecast using OpenWeatherMap’s forecast API.
+- Deploying the app using services like Heroku, Render, or AWS.
