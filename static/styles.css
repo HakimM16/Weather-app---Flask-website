@@ -43,6 +43,8 @@ button:hover {
     display: inline-block;
     text-align: left;
     background-color: #49b8ad;
+    box-shadow: 0px 4px 8px #112b28;
+    border-radius: 10px;
 }
 
 .error {
@@ -55,3 +57,4 @@ button:hover {
     padding: 10px 20px;
     text-align: center;
 }
+
