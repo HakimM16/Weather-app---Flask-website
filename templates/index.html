@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/index.js"></script>
 </head>
 <body>
     <nav class="nav-bar">
@@ -13,10 +14,9 @@
     <div class="container">
         <form action="/weather" method="POST">
             <input type="text" name="city" placeholder="Enter city name..." required>
-            <button type="submit" onclick="changeColour()">Get Weather</button>
+            <button type="submit">Get Weather</button>
         </form>
-
-        <div id="loader" style="display: none;">Loading...</div>
+        <button onclick="changeColor()">Change Color</button>
 
         {% if weather %}
             <div class="weather">
@@ -28,8 +28,7 @@
         {% elif error %}
             <p class="error">{{ error }}</p>
         {% endif %}
-    </div>
 
-    <script src="/script/index.js"></script>
-</body> 
+    </div>
+</body>
 </html>

@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, render_template, request
 import requests
+import random
 
 app = Flask(__name__)
 
@@ -33,6 +34,11 @@ def get_weather():
     else:
         error_message = data.get('message', 'Error fetching data')
         return render_template('index.html', error=error_message)
-    
+
+@app.route('/color')
+def color():
+    shades_of_green = ['#112b28', '#225a53', '#0a3e38', '#117d71', '#449f94', '#43736d']
+    return jsonify(color=random.choice(shades_of_green))
+
 if __name__ == '__main__':
     app.run(debug=True)
